@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedVerde · Campaña Mortex · Julio 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ── Cambia estos dos por los hex exactos de RedVerde ── */
+    --verde:#3E7C4A;
+    --verde-hondo:#1F3D28;
+    /* ────────────────────────────────────────────────────── */
+    --tierra:#A85E33;
+    --blanco:#FFFFFF;
+    --hueso:#F6F6F3;
+    --tinta:#1C231E;
+    --gris:#6E7872;
+    --linea:#E2E4E0;
+    --font:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--blanco);color:var(--tinta);font-family:var(--font);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  .verde{color:var(--verde)}
+  .tierra{color:var(--tierra)}
+
+  /* topbar */
+  .topbar{border-bottom:1px solid var(--linea);padding:20px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em}
+  .leaf{width:22px;height:22px;flex:none}
+  .stamp{font-size:13px;color:var(--gris)}
+
+  header{padding:72px 0 8px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--verde)}
+  h1{font-size:clamp(32px,5.2vw,54px);line-height:1.08;letter-spacing:-.025em;
+     font-weight:600;margin:16px 0 0;max-width:19ch}
+  .lede{font-size:17px;color:var(--gris);max-width:56ch;margin-top:20px}
+
+  section{padding:56px 0}
+  h2{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);
+     padding-bottom:14px;border-bottom:1px solid var(--linea);margin-bottom:36px}
+
+  /* regla */
+  .track{position:relative;height:3px;background:var(--linea);border-radius:2px;margin:86px 0 0}
+  .span-bar{position:absolute;top:0;height:3px;background:var(--tierra);border-radius:2px;opacity:.35}
+  .mark{position:absolute;top:-7px;width:3px;height:17px;background:var(--verde);border-radius:2px}
+  .mark.real{background:var(--tierra);height:27px;top:-12px}
+  .mark span{position:absolute;bottom:32px;left:0;transform:translateX(-50%);white-space:nowrap;display:block;text-align:center}
+  .mark .val{font-size:clamp(26px,4.4vw,42px);font-weight:600;letter-spacing:-.03em;line-height:1;display:block;color:var(--verde)}
+  .mark.real .val{color:var(--tierra)}
+  .mark .lab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);display:block;margin-top:9px;font-weight:600}
+  .scale{display:flex;justify-content:space-between;margin-top:14px;font-size:11px;color:var(--gris);letter-spacing:.08em}
+
+  /* bloque oscuro */
+  .statement{background:var(--verde-hondo);color:#EAEFEA;padding:48px 42px;border-radius:4px}
+  .statement .big{font-size:clamp(24px,3.3vw,34px);font-weight:600;line-height:1.18;letter-spacing:-.02em;color:#fff;max-width:24ch}
+  .statement p{color:#9DB0A3;margin-top:20px;max-width:58ch;font-size:15px}
+  .statement b{color:#fff;font-weight:600}
+
+  /* kpis */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:4px;overflow:hidden}
+  .kpi{background:var(--hueso);padding:26px 22px}
+  .kpi .n{font-size:40px;font-weight:600;letter-spacing:-.03em;line-height:1}
+  .kpi .l{font-size:13px;color:var(--gris);margin-top:8px;line-height:1.4}
+  .kpi.hero{background:#F0F5F1}
+  .kpi.hero .n{color:var(--verde)}
+
+  /* barras */
+  .bars{display:grid;gap:16px}
+  .bar{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
+  .bar .name{font-size:14px;color:var(--gris);text-align:right}
+  .bar .fill{height:40px;border-radius:3px;background:#D7DDD8;display:flex;align-items:center;justify-content:flex-end;
+    padding-right:14px;font-size:19px;font-weight:600;color:var(--tinta);
+    transform-origin:left;animation:grow .75s cubic-bezier(.2,.7,.2,1) both}
+  .bar.target .fill{background:var(--verde);color:#fff}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){.bar .fill{animation:none}}
+
+  /* acciones */
+  .actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:4px;overflow:hidden}
+  .act{background:var(--hueso);padding:28px 24px}
+  .act .num{font-size:12px;letter-spacing:.14em;font-weight:600;color:var(--verde)}
+  .act h3{font-size:19px;font-weight:600;letter-spacing:-.015em;line-height:1.25;margin:12px 0 10px}
+  .act p{font-size:14px;color:var(--gris)}
+
+  .next{margin-top:36px;padding:22px 26px;border:1px solid var(--verde);border-radius:4px;color:var(--verde-hondo);font-size:15px}
+  .next b{color:var(--verde);font-weight:600}
+
+  footer{border-top:1px solid var(--linea);padding:32px 0 64px;color:var(--gris);font-size:13px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:640px){
+    .bar{grid-template-columns:1fr;gap:6px}
+    .bar .name{text-align:left}
+    .statement{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20 4C20 14 14 20 4 20c0-10 6-16 16-16Z" fill="var(--verde)"/>
+        <path d="M4 20C8 14 12 10 18 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      RedVerde Bioconstrucción
+    </div>
+    <div class="stamp">Informe de campaña · Julio 2026</div>
+  </div>
+</div>
+
+<header class="wrap">
+  <div class="kicker">Publicidad en Google · Marca Mortex</div>
+  <h1>Cada visita cuesta <span class="tierra">3,3 veces</span> más de lo previsto.</h1>
+  <p class="lede">La campaña atrae a la gente correcta. El problema es el precio de entrada.</p>
+</header>
+
+<section class="wrap" aria-label="Coste por visita: previsto frente a real">
+  <div class="track">
+    <div class="span-bar" style="left:24%;width:52%"></div>
+    <div class="mark" style="left:24%"><span><span class="val">0,62 €</span><span class="lab">Previsto</span></span></div>
+    <div class="mark real" style="left:76%"><span><span class="val">2,04 €</span><span class="lab">Real</span></span></div>
+  </div>
+  <div class="scale"><span>0 €</span><span>1 €</span><span>2 €</span><span>2,50 €</span></div>
+</section>
+
+<section class="wrap">
+  <div class="statement">
+    <p class="big">Con 200 € al mes compramos 98 visitas. Deberíamos estar comprando 322.</p>
+    <p>El estudio previo estimaba entre <b>0,21 € y 1,03 €</b> por visita. La realidad son <b>2,04 €</b>. Mortex es una marca que también venden otros distribuidores: quien busca «mortex precio» es un cliente muy interesado, y todos pujamos por él. Ese es el precio real del mercado.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Los primeros nueve días</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="n">244</div><div class="l">veces que apareció el anuncio</div></div>
+    <div class="kpi"><div class="n">25</div><div class="l">visitas a la web</div></div>
+    <div class="kpi hero"><div class="n">2</div><div class="l">contactos comerciales</div></div>
+    <div class="kpi"><div class="n">51 €</div><div class="l">invertidos</div></div>
+  </div>
+  <p class="lede">De cada 100 personas que entran, 8 dejan sus datos. Es una cifra sana — aunque con solo 25 visitas todavía es pronto para darla por buena.</p>
+</section>
+
+<section class="wrap">
+  <h2>Con la nueva página</h2>
+  <div class="bars">
+    <div class="bar"><div class="name">Hoy</div><div class="fill" style="width:53%;animation-delay:.05s">8</div></div>
+    <div class="bar"><div class="name">Mejora leve</div><div class="fill" style="width:67%;animation-delay:.15s">10</div></div>
+    <div class="bar target"><div class="name">Esperado</div><div class="fill" style="width:80%;animation-delay:.25s">12</div></div>
+    <div class="bar"><div class="name">Optimista</div><div class="fill" style="width:100%;animation-delay:.35s">15</div></div>
+  </div>
+  <p class="lede">Contactos al mes con la misma inversión. La nueva página no trae más visitas: consigue que más visitas dejen sus datos. Cada contacto pasaría de costar 25,50 € a unos 17 €.</p>
+</section>
+
+<section class="wrap">
+  <h2>Qué hacemos ahora</h2>
+  <div class="actions">
+    <div class="act">
+      <div class="num">01</div>
+      <h3>No depender solo de Mortex</h3>
+      <p>Hoy todas las búsquedas que compramos llevan la palabra «Mortex». Vamos a probar también búsquedas de producto —microcemento, revestimiento continuo— para no depender de una sola marca.</p>
+    </div>
+    <div class="act">
+      <div class="num">02</div>
+      <h3>Publicar la web y no tocar nada</h3>
+      <p>Google necesita unas dos semanas para aprender qué funciona. Cada cambio que hacemos reinicia ese aprendizaje.</p>
+    </div>
+    <div class="act">
+      <div class="num">03</div>
+      <h3>Filtrar cada semana lo que no interesa</h3>
+      <p>Con este presupuesto, una sola visita irrelevante se lleva el 4 % del mes. Se revisa semanalmente.</p>
+    </div>
+  </div>
+  <div class="next"><b>Próxima revisión:</b> primera semana de agosto, con un mes completo de datos y la nueva página en marcha.</div>
+</section>
+
+<footer class="wrap">
+  <span>Enube Digital para RedVerde Bioconstrucción</span>
+  <span>Datos del 1 al 9 de julio de 2026</span>
+</footer>
+
+</body>
+</html>

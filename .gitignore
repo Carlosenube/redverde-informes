@@ -1,0 +1,33 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Caché y build
+.cache/
+dist/
+build/
+.next/
+.turbo/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
