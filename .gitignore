@@ -31,3 +31,10 @@ build/
 Thumbs.db
 .idea/
 .vscode/
+
+# Herramientas de desarrollo local (no se publican)
+.claude/
+
+# Datos en bruto de Google Ads: se conservan en local pero NO se publican
+# en Vercel (evita exponer CSVs del cliente en una URL pública).
+**/Informes google ads/
