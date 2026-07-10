@@ -72,6 +72,17 @@
   .kpi.hero{background:#F0F5F1}
   .kpi.hero .n{color:var(--verde)}
 
+  /* fases de aprendizaje */
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--linea);border:1px solid var(--linea);border-radius:8px;overflow:hidden}
+  .phase{background:var(--hueso);padding:26px 24px;position:relative}
+  .phase.now{background:#F0F5F1}
+  .phase.now::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--verde)}
+  .phase .ph-when{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gris)}
+  .phase.now .ph-when{color:var(--verde)}
+  .phase .ph-title{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:8px 0 10px;line-height:1.2}
+  .phase .ph-desc{font-size:14px;color:var(--gris)}
+
   /* galería de anuncios */
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
   .adcard{border:1px solid var(--linea);border-radius:10px;padding:12px;background:var(--hueso);
@@ -132,6 +143,7 @@
     .statement{padding:32px 24px}
     .fstep.s2{width:82%}
     .fstep.s3{width:60%}
+    .phases{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -165,6 +177,29 @@
     <div class="kpi"><div class="n">51 €</div><div class="l">invertidos en estos 9 días</div></div>
   </div>
   <p class="intro" style="margin-top:36px;margin-bottom:0">En resumen: la campaña ya está en marcha, aparece ante gente que busca justo tu producto y ya ha traído los dos primeros contactos. Ahora toca ganar volumen. Todo lo de abajo explica estos cuatro números con detalle.</p>
+</section>
+
+<section class="wrap">
+  <h2>Una campaña que acaba de nacer</h2>
+  <p class="intro">Esta es una cuenta prácticamente nueva, así que Google todavía está aprendiendo. Su sistema necesita unas semanas de datos para entender a quién le merece la pena enseñar tu anuncio, a qué hora y en qué búsquedas. Durante ese tiempo es <b>normal que los resultados suban y bajen de un día para otro</b> — no es un fallo, es parte del rodaje.</p>
+  <div class="phases">
+    <div class="phase now">
+      <div class="ph-when">Fase 1 · Ahora</div>
+      <div class="ph-title">Aprendizaje</div>
+      <div class="ph-desc">Google prueba distintas búsquedas y horarios para ver qué funciona. Resultados irregulares: totalmente normal en este punto.</div>
+    </div>
+    <div class="phase">
+      <div class="ph-when">Fase 2 · Próximas semanas</div>
+      <div class="ph-title">Rodaje</div>
+      <div class="ph-desc">Empieza a afinar y a mostrar tu anuncio, sobre todo, a la gente con más probabilidad de contactar.</div>
+    </div>
+    <div class="phase">
+      <div class="ph-when">Fase 3 · A partir del 2.º mes</div>
+      <div class="ph-title">Rendimiento estable</div>
+      <div class="ph-desc">Resultados más constantes y predecibles, con un coste por contacto más bajo.</div>
+    </div>
+  </div>
+  <p class="note">Por eso lo más importante ahora es <b>darle continuidad y no hacer cambios bruscos</b>: cada cambio grande reinicia ese aprendizaje y retrasa los buenos resultados. La paciencia de estas primeras semanas es la que hace que el mes que viene rinda mejor.</p>
 </section>
 
 <section class="wrap">
@@ -274,7 +309,7 @@
 
 <section class="wrap">
   <h2>Previsión para fin de julio</h2>
-  <p class="intro">Si la campaña mantiene el ritmo actual y el presupuesto de ~200 € al mes, esto es lo que esperamos ver a 31 de julio. Es una estimación con solo 9 días de datos, así que la damos como una horquilla, no como una cifra exacta.</p>
+  <p class="intro">Si la campaña mantiene el ritmo actual y el presupuesto de ~200 € al mes, esto es lo que esperamos ver a 31 de julio. Es una estimación con solo 9 días de datos y la campaña aún en aprendizaje, así que la damos como una horquilla, no como una cifra exacta — y con margen para mejorar a medida que Google afine.</p>
   <svg class="chart" viewBox="0 0 700 300" role="img" aria-label="Previsión de inversión acumulada durante julio">
     <!-- rejilla -->
     <g stroke="var(--linea)" stroke-width="1">
