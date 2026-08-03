@@ -100,7 +100,7 @@
   .fconn{font-size:13px;color:var(--gris);padding:12px 0;font-weight:500}
   .fconn b{color:var(--tinta)}
 
-  /* comparativa previsto vs real */
+  /* comparativa */
   .compare{border:1px solid var(--linea);border-radius:8px;overflow:hidden}
   .compare .row{display:grid;grid-template-columns:1.5fr 1fr 1fr}
   .compare .row+.row{border-top:1px solid var(--linea)}
@@ -118,17 +118,6 @@
     padding-right:14px;color:#fff;font-weight:600;font-size:16px}
   .share-rest{position:absolute;top:0;right:14px;height:100%;display:flex;align-items:center;color:var(--gris);font-size:13px}
 
-  /* barras comparación */
-  .bars{display:grid;gap:16px}
-  .bar{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
-  .bar .name{font-size:14px;color:var(--gris);text-align:right}
-  .bar .fill{height:44px;border-radius:3px;background:#D7DDD8;display:flex;align-items:center;justify-content:flex-end;
-    padding-right:14px;font-size:19px;font-weight:600;color:var(--tinta);
-    transform-origin:left;animation:grow .75s cubic-bezier(.2,.7,.2,1) both}
-  .bar.target .fill{background:var(--verde);color:#fff}
-  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  @media (prefers-reduced-motion:reduce){.bar .fill,.share-fill{animation:none}}
-
   /* acciones */
   .actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:4px;overflow:hidden}
   .act{background:var(--hueso);padding:28px 24px}
@@ -143,8 +132,6 @@
     display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   @media(max-width:640px){
-    .bar{grid-template-columns:1fr;gap:6px}
-    .bar .name{text-align:left}
     .statement{padding:32px 24px}
     .fstep.s2{width:82%}
     .fstep.s3{width:60%}
@@ -171,8 +158,8 @@
 
 <header class="wrap">
   <div class="kicker">Publicidad en Google · Marca Mortex · Cierre de mes</div>
-  <h1>Julio cierra con <span class="verde">13 contactos</span>, y cada uno cuesta casi la mitad.</h1>
-  <p class="lede">El mes completo confirma lo que apuntaban los primeros días: la campaña ya rueda, trae clientes potenciales y cada vez de forma más eficiente. Aquí tienes el resumen, sin tecnicismos.</p>
+  <h1>Julio deja <span class="verde">5 contactos reales</span>, y de calidad.</h1>
+  <p class="lede">En este informe contamos solo los contactos que han llegado de verdad a tu formulario, no las conversiones que a veces infla la plataforma. Este es el mes tal cual, sin tecnicismos y sin humo.</p>
 </header>
 
 <section class="wrap">
@@ -180,67 +167,78 @@
   <div class="kpis">
     <div class="kpi"><div class="n">1.026</div><div class="l">veces que se mostró tu anuncio</div></div>
     <div class="kpi"><div class="n">142</div><div class="l">personas entraron en la web</div></div>
-    <div class="kpi hero"><div class="n">13</div><div class="l">contactos comerciales</div></div>
+    <div class="kpi hero"><div class="n">5</div><div class="l">contactos reales (formulario)</div></div>
     <div class="kpi"><div class="n">188,62 €</div><div class="l">invertidos en el mes</div></div>
   </div>
-  <p class="intro" style="margin-top:36px;margin-bottom:0">Y lo más importante: cada contacto ha costado <b style="color:var(--verde)">14,51 €</b> de media, frente a los ~25 € de los primeros días. A menos coste, más clientes por el mismo presupuesto.</p>
+  <p class="intro" style="margin-top:36px;margin-bottom:0">Cada contacto real ha costado <b style="color:var(--tinta)">37,72 €</b>. Son pocos, pero de peso: la mayoría son profesionales con proyectos de reforma en marcha. Para un producto de proyecto como Mortex, un contacto así vale mucho.</p>
+</section>
+
+<section class="wrap">
+  <h2>Contamos solo contactos reales</h2>
+  <p class="intro">Google Ads a veces cuenta más conversiones de las que llegan de verdad (clics repetidos, validaciones del formulario, etc.). Hemos cruzado sus datos con los envíos reales de tu formulario y esta es la diferencia:</p>
+  <div class="compare">
+    <div class="row head">
+      <div class="cell">&nbsp;</div>
+      <div class="cell right">Contaba Google</div>
+      <div class="cell right">Reales</div>
+    </div>
+    <div class="row">
+      <div class="cell lbl">Contactos de formulario</div>
+      <div class="cell right prev">11</div>
+      <div class="cell right real">5</div>
+    </div>
+  </div>
+  <p class="note">Google sumaba además 1 WhatsApp y 1 llamada que <b>no hemos podido verificar</b>, así que los dejamos fuera. Nos quedamos solo con lo seguro: <b>5 contactos</b>. Preferimos un número honesto a una cifra bonita.</p>
 </section>
 
 <section class="wrap">
   <h2>El aprendizaje está dando frutos</h2>
-  <p class="intro">Recordemos que es una cuenta prácticamente nueva y Google necesitaba unas semanas para aprender a quién mostrar tu anuncio. Ese aprendizaje ya se nota: el coste por clic ha bajado de 2,04 € a 1,33 € y los contactos se han acelerado en la segunda mitad del mes.</p>
+  <p class="intro">Recordemos que es una cuenta prácticamente nueva y Google necesitaba unas semanas para aprender a quién mostrar tu anuncio. Ese aprendizaje ya se nota: el coste por clic bajó de 2,04 € a 1,33 €, y los primeros contactos reales llegaron en la segunda mitad del mes.</p>
   <div class="phases">
     <div class="phase">
       <div class="ph-when">Fase 1 · Completada</div>
       <div class="ph-title">Aprendizaje</div>
-      <div class="ph-desc">Google probó búsquedas y horarios durante las primeras semanas. Por eso al principio los resultados eran irregulares.</div>
+      <div class="ph-desc">Google probó búsquedas y horarios durante las primeras semanas. Por eso al principio no llegaban contactos.</div>
     </div>
     <div class="phase now">
       <div class="ph-when">Fase 2 · Ahora</div>
       <div class="ph-title">Rodaje</div>
-      <div class="ph-desc">Ya afina a quién enseñar el anuncio. Se nota: el coste por contacto ha caído y los contactos se han disparado.</div>
+      <div class="ph-desc">Ya afina a quién enseñar el anuncio. Se nota: el clic se ha abaratado y han empezado a llegar contactos reales.</div>
     </div>
     <div class="phase">
       <div class="ph-when">Fase 3 · Próximo mes</div>
       <div class="ph-title">Rendimiento estable</div>
-      <div class="ph-desc">Resultados más constantes y coste por contacto aún más bajo a medida que se acumula historial.</div>
+      <div class="ph-desc">Contactos más constantes y coste por clic aún más bajo a medida que se acumula historial.</div>
     </div>
   </div>
 
-  <svg class="chart" viewBox="0 0 700 300" role="img" aria-label="Contactos acumulados a lo largo de julio, mostrando la aceleración en la segunda mitad" style="margin-top:44px">
-    <!-- rejilla -->
-    <g stroke="var(--linea)" stroke-width="1">
-      <line x1="40" y1="167.7" x2="680" y2="167.7"/>
-      <line x1="40" y1="75.4"  x2="680" y2="75.4"/>
-      <line x1="40" y1="20"    x2="680" y2="20"/>
-    </g>
+  <svg class="chart" viewBox="0 0 700 300" role="img" aria-label="Contactos reales acumulados a lo largo de julio" style="margin-top:44px">
+    <line x1="40" y1="20"  x2="680" y2="20"  stroke="var(--linea)" stroke-width="1"/>
+    <line x1="40" y1="260" x2="680" y2="260" stroke="var(--linea)" stroke-width="1.5"/>
     <g fill="var(--gris)" font-family="Inter,sans-serif" font-size="12" text-anchor="end">
-      <text x="34" y="171">5</text>
-      <text x="34" y="79">10</text>
-      <text x="34" y="24">13</text>
+      <text x="34" y="24">5</text>
+      <text x="34" y="264">0</text>
     </g>
     <!-- área -->
-    <polygon points="40,260 104,241.5 189.3,223.1 360,204.6 466.7,186.2 488,112.3 573.3,75.4 616,38.5 680,20 680,260"
+    <polygon points="40,260 466.7,260 488,164 573.3,116 616,68 680,20 680,260"
              fill="var(--verde)" opacity="0.10"/>
     <!-- línea acumulada -->
-    <polyline points="40,260 104,241.5 189.3,223.1 360,204.6 466.7,186.2 488,112.3 573.3,75.4 616,38.5 680,20"
+    <polyline points="40,260 466.7,260 488,164 573.3,116 616,68 680,20"
               fill="none" stroke="var(--verde)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- marca primeros 9 días -->
-    <line x1="210.7" y1="20" x2="210.7" y2="260" stroke="var(--gris)" stroke-width="1" stroke-dasharray="3 4" opacity="0.6"/>
-    <circle cx="210.7" cy="223.1" r="5" fill="var(--gris)"/>
-    <text x="218" y="214" fill="var(--gris)" font-family="Inter,sans-serif" font-size="12">2 en los primeros 9 días</text>
+    <!-- primer contacto -->
+    <line x1="488" y1="20" x2="488" y2="260" stroke="var(--gris)" stroke-width="1" stroke-dasharray="3 4" opacity="0.6"/>
+    <circle cx="488" cy="164" r="4" fill="var(--gris)"/>
     <!-- punto final -->
     <circle cx="680" cy="20" r="6" fill="var(--verde)"/>
-    <text x="672" y="14" fill="var(--verde)" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="end">13 contactos</text>
+    <text x="672" y="14" fill="var(--verde)" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="end">5 contactos</text>
     <!-- eje x -->
     <g fill="var(--gris)" font-family="Inter,sans-serif" font-size="12">
       <text x="40" y="282" text-anchor="start">1 jul</text>
-      <text x="210.7" y="282" text-anchor="middle">9 jul</text>
       <text x="488" y="282" text-anchor="middle">22 jul</text>
       <text x="680" y="282" text-anchor="end">31 jul</text>
     </g>
   </svg>
-  <p class="chart-cap">Contactos acumulados durante el mes. En los primeros 9 días llegaron 2; en las tres semanas siguientes, 11 más. La curva se empina justo cuando Google termina de aprender.</p>
+  <p class="chart-cap">Contactos reales acumulados. Los 5 llegaron entre el 22 y el 31 de julio, cuando la campaña ya había aprendido a quién mostrar el anuncio. Las primeras semanas fueron de rodaje.</p>
 </section>
 
 <section class="wrap">
@@ -276,7 +274,7 @@
       <div class="cap"><b>Mortex Precio por Saco</b><br>Con enlaces extra a otras páginas de la web.<span class="tag">Enlaces + Llamada</span></div>
     </div>
   </div>
-  <p class="note">El teléfono (952 22 52 00), el botón de WhatsApp y los enlaces extra son <b>añadidos gratuitos</b> que dan más formas de contacto directo. De hecho, este mes han entrado contactos por los tres caminos: formulario, WhatsApp y llamada.</p>
+  <p class="note">El teléfono (952 22 52 00), el botón de WhatsApp y los enlaces extra son <b>añadidos gratuitos</b> que facilitan el contacto directo. En julio, los contactos verificados llegaron por el <b>formulario</b> de la web.</p>
 </section>
 
 <section class="wrap">
@@ -286,52 +284,28 @@
     <div class="fstep s1"><div class="fn">1.026</div><div class="fl">veces que apareció el anuncio</div></div>
     <div class="fconn">↓ &nbsp;<b>14 de cada 100</b> hacen clic y entran en la web</div>
     <div class="fstep s2"><div class="fn">142</div><div class="fl">visitas a la web</div></div>
-    <div class="fconn">↓ &nbsp;<b>9 de cada 100</b> visitas dejan sus datos</div>
-    <div class="fstep s3"><div class="fn">13</div><div class="fl">contactos comerciales</div></div>
+    <div class="fconn">↓ &nbsp;<b>3–4 de cada 100</b> visitas dejan sus datos</div>
+    <div class="fstep s3"><div class="fn">5</div><div class="fl">contactos reales</div></div>
   </div>
-  <p class="chart-cap">Que 14 de cada 100 personas hagan clic es una cifra muy buena (lo normal ronda 3–5). Y que 9 de cada 100 visitas contacten confirma que llega gente realmente interesada.</p>
+  <p class="chart-cap">Que 14 de cada 100 personas hagan clic es una cifra muy buena (lo normal ronda 3–5). Contactan pocos en proporción, pero — como verás abajo — son de mucha calidad.</p>
 </section>
 
 <section class="wrap">
-  <h2>Mejor de lo que anticipamos</h2>
-  <p class="intro">En el informe de los primeros días hicimos una previsión prudente. El mes real la ha superado en las tres cifras que importan:</p>
-  <div class="compare">
-    <div class="row head">
-      <div class="cell">&nbsp;</div>
-      <div class="cell right">Lo previsto</div>
-      <div class="cell right">Lo real</div>
-    </div>
-    <div class="row">
-      <div class="cell lbl">Visitas a la web</div>
-      <div class="cell right prev">~98</div>
-      <div class="cell right real">142</div>
-    </div>
-    <div class="row">
-      <div class="cell lbl">Contactos comerciales</div>
-      <div class="cell right prev">7–9</div>
-      <div class="cell right real">13</div>
-    </div>
-    <div class="row">
-      <div class="cell lbl">Coste por contacto</div>
-      <div class="cell right prev">~25 €</div>
-      <div class="cell right real">14,51 €</div>
-    </div>
-  </div>
-  <div class="statement" style="margin-top:36px">
-    <p class="big">El coste por contacto ha caído un 43 % en un mes.</p>
-    <p>Al principio, «Mortex» era la única palabra por la que competíamos y salía cara (2,04 € por visita). Al abrir la campaña a búsquedas de producto —<b>microcemento, mortero de cal, revestimiento continuo</b>— entra gente igual de interesada pero por bastante menos dinero. El coste medio por visita bajó a <b>1,33 €</b> y arrastró todo lo demás.</p>
-  </div>
-</section>
-
-<section class="wrap">
-  <h2>De dónde vienen los contactos</h2>
-  <p class="intro">Los 13 contactos del mes llegaron por tres vías distintas — señal de que ofrecer varias formas de contacto merece la pena:</p>
+  <h2>Quiénes son esos 5 contactos</h2>
+  <p class="intro">Lo importante no es solo cuántos, sino quiénes. Los 5 contactos del mes tienen un proyecto concreto detrás — no son curiosos:</p>
   <div class="kpis">
-    <div class="kpi hero"><div class="n">11</div><div class="l">por el formulario de la web</div></div>
-    <div class="kpi"><div class="n">1</div><div class="l">por WhatsApp</div></div>
-    <div class="kpi"><div class="n">1</div><div class="l">por llamada desde el anuncio</div></div>
+    <div class="kpi hero"><div class="n">3</div><div class="l">profesionales (reformas y obra)</div></div>
+    <div class="kpi"><div class="n">2</div><div class="l">particulares con obra en marcha</div></div>
+    <div class="kpi"><div class="n">5</div><div class="l">con proyecto concreto</div></div>
   </div>
-  <p class="note">El grueso llega por la búsqueda <b>«mortex»</b> (6 contactos), pero también por términos de producto como <b>«mortero de cal»</b>. Es la prueba de que ampliar más allá de la marca no solo abarata: también trae clientes nuevos.</p>
+  <p class="note">Entre sus consultas: revestimiento de baños y duchas, encimera y paredes de cocina, revestimiento de paredes interior y exterior, y un piso completo en Barcelona con planos. Son contactos <b>cualificados y cercanos a comprar</b>, justo el tipo de cliente que interesa para Mortex.</p>
+</section>
+
+<section class="wrap">
+  <div class="statement">
+    <p class="big">Pocos, pero buenos — y con el clic cada vez más barato.</p>
+    <p>Al principio «Mortex» era la única palabra por la que competíamos y salía cara (2,04 € por visita). Al abrir la campaña a búsquedas de producto —<b>microcemento, mortero de cal, revestimiento continuo</b>— entra gente igual de interesada por menos dinero: el coste por visita bajó a <b>1,33 €</b>. Eso hace que el mismo presupuesto traiga más visitas cualificadas cada mes.</p>
+  </div>
 </section>
 
 <section class="wrap">
@@ -342,12 +316,12 @@
     <div class="share-rest">81 % de búsquedas donde aún no apareces</div>
   </div>
   <div class="kpis" style="margin-top:36px">
-    <div class="kpi hero"><div class="n">~13</div><div class="l">contactos previstos (mismo presupuesto)</div></div>
-    <div class="kpi"><div class="n">~14 €</div><div class="l">coste por contacto esperado</div></div>
+    <div class="kpi hero"><div class="n">~5</div><div class="l">contactos previstos (mismo presupuesto)</div></div>
+    <div class="kpi"><div class="n">~38 €</div><div class="l">coste por contacto esperado</div></div>
     <div class="kpi"><div class="n">19 %</div><div class="l">de búsquedas donde apareces hoy</div></div>
     <div class="kpi"><div class="n">~190 €</div><div class="l">mismo presupuesto que julio</div></div>
   </div>
-  <p class="chart-cap">Un matiz honesto: agosto es mes de vacaciones y la demanda de reformas suele bajar algo, así que es una previsión prudente. Seguimos con el mismo presupuesto, exprimiendo al máximo lo que ya funciona.</p>
+  <p class="chart-cap">Un matiz honesto: agosto es mes de vacaciones y la demanda de reformas suele bajar. Aun así, los primeros días ya han traído contactos nuevos — buena señal. Seguimos con el mismo presupuesto, exprimiendo al máximo lo que ya funciona.</p>
 </section>
 
 <section class="wrap">
@@ -355,26 +329,26 @@
   <div class="actions">
     <div class="act">
       <div class="num">01</div>
-      <h3>Sacar más del mismo presupuesto</h3>
-      <p>Afinamos anuncios y pujas para que Google muestre tu anuncio en más búsquedas relevantes sin gastar más. Cada punto de calidad que ganamos abarata el clic y estira la inversión.</p>
+      <h3>Ajustar el seguimiento</h3>
+      <p>Corregimos la configuración de conversiones para que Google cuente solo los contactos reales. Así los próximos informes cuadran solos y las decisiones se toman sobre datos fiables.</p>
     </div>
     <div class="act">
       <div class="num">02</div>
-      <h3>Seguir más allá de «Mortex»</h3>
-      <p>Los términos de producto (microcemento, mortero de cal, revestimiento continuo) ya están trayendo contactos más baratos. Seguimos ampliando por ahí.</p>
+      <h3>Sacar más del mismo presupuesto</h3>
+      <p>Afinamos anuncios y pujas para que Google muestre tu anuncio en más búsquedas relevantes sin gastar más. Cada punto de calidad que ganamos abarata el clic.</p>
     </div>
     <div class="act">
       <div class="num">03</div>
-      <h3>Limpieza semanal</h3>
-      <p>Cada semana filtramos las búsquedas que no encajan (competidores, resinas epoxi, etc.) para no gastar de más. Ya se están excluyendo de forma sistemática.</p>
+      <h3>Seguir más allá de «Mortex»</h3>
+      <p>Los términos de producto (microcemento, mortero de cal, revestimiento continuo) traen visitas más baratas. Seguimos ampliando ahí y filtrando cada semana lo que no encaja.</p>
     </div>
   </div>
-  <div class="next"><b>Próxima revisión:</b> primeros de septiembre, con el mes de agosto completo.</div>
+  <div class="next"><b>Próxima revisión:</b> primeros de septiembre, con el mes de agosto completo y ya sobre contactos verificados.</div>
 </section>
 
 <footer class="wrap">
   <span>Enube Digital para RedVerde Bioconstrucción</span>
-  <span>Datos del 1 al 31 de julio de 2026</span>
+  <span>Datos del 1 al 31 de julio de 2026 · Contactos verificados con el formulario</span>
 </footer>
 
 </body>
