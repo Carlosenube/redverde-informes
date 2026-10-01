@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedVerde · Campaña Mortex · Septiembre 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#3E7C4A;
+    --verde-hondo:#1F3D28;
+    --verde-medio:#5C9A67;
+    --tierra:#A85E33;
+    --blanco:#FFFFFF;
+    --hueso:#F6F6F3;
+    --tinta:#1C231E;
+    --gris:#6E7872;
+    --linea:#E2E4E0;
+    --font:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--blanco);color:var(--tinta);font-family:var(--font);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  .verde{color:var(--verde)}
+  .tierra{color:var(--tierra)}
+
+  .topbar{border-bottom:1px solid var(--linea);padding:20px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em}
+  .leaf{width:22px;height:22px;flex:none}
+  .stamp{font-size:13px;color:var(--gris)}
+
+  header{padding:72px 0 8px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--verde)}
+  h1{font-size:clamp(32px,5.2vw,54px);line-height:1.08;letter-spacing:-.025em;
+     font-weight:600;margin:16px 0 0;max-width:20ch}
+  .lede{font-size:17px;color:var(--gris);max-width:62ch;margin-top:20px}
+
+  section,section.wrap{padding-top:56px;padding-bottom:56px}
+  header.wrap{padding-top:72px;padding-bottom:8px}
+  h2{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);
+     padding-bottom:14px;border-bottom:1px solid var(--linea);margin-bottom:36px}
+  .intro{font-size:17px;color:var(--gris);max-width:62ch;margin:-16px 0 36px}
+
+  .statement{background:var(--verde-hondo);color:#EAEFEA;padding:48px 42px;border-radius:4px}
+  .statement .big{font-size:clamp(24px,3.3vw,34px);font-weight:600;line-height:1.18;letter-spacing:-.02em;color:#fff;max-width:26ch}
+  .statement p{color:#9DB0A3;margin-top:20px;max-width:58ch;font-size:15px}
+  .statement b{color:#fff;font-weight:600}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:4px;overflow:hidden}
+  .kpi{background:var(--hueso);padding:26px 22px}
+  .kpi .n{font-size:38px;font-weight:600;letter-spacing:-.03em;line-height:1}
+  .kpi .l{font-size:13px;color:var(--gris);margin-top:8px;line-height:1.4}
+  .kpi.hero{background:#F0F5F1}
+  .kpi.hero .n{color:var(--verde)}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+  .adcard{border:1px solid var(--linea);border-radius:10px;padding:12px;background:var(--hueso);display:flex;flex-direction:column}
+  .adcard img{width:100%;height:auto;border-radius:6px;display:block;background:#fff;border:1px solid var(--linea)}
+  .adcard .cap{font-size:13px;color:var(--gris);margin-top:12px;line-height:1.45}
+  .adcard .cap b{color:var(--tinta);font-weight:600}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.02em;padding:3px 8px;border-radius:20px;margin-top:8px;background:#EAF1EB;color:var(--verde)}
+  .note{font-size:15px;color:var(--gris);max-width:62ch;margin-top:28px;padding:18px 22px;background:var(--hueso);border-radius:8px;border:1px solid var(--linea)}
+  .note b{color:var(--tinta)}
+
+  .chart{width:100%;height:auto;display:block}
+  .chart-cap{font-size:14px;color:var(--gris);margin-top:18px;max-width:62ch}
+
+  .funnel{display:flex;flex-direction:column;gap:0;align-items:center}
+  .fstep{width:100%;max-width:640px;text-align:center;color:#fff;border-radius:6px;padding:20px 16px}
+  .fstep .fn{font-size:38px;font-weight:600;letter-spacing:-.03em;line-height:1}
+  .fstep .fl{font-size:14px;margin-top:4px;opacity:.9}
+  .fstep.s1{background:var(--tierra);width:100%}
+  .fstep.s2{background:var(--verde-medio);width:66%}
+  .fstep.s3{background:var(--verde-hondo);width:36%}
+  .fconn{font-size:13px;color:var(--gris);padding:12px 0;font-weight:500}
+  .fconn b{color:var(--tinta)}
+
+  .compare{border:1px solid var(--linea);border-radius:8px;overflow:hidden}
+  .compare .row{display:grid;grid-template-columns:1.5fr 1fr 1fr}
+  .compare .row+.row{border-top:1px solid var(--linea)}
+  .compare .cell{padding:16px 20px;font-size:16px}
+  .compare .head{background:var(--hueso)}
+  .compare .head .cell{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
+  .compare .lbl{color:var(--gris)}
+  .compare .prev{color:var(--gris)}
+  .compare .real{color:var(--verde);font-weight:600}
+  .compare .real.down{color:var(--tierra)}
+  .compare .cell.right{text-align:right}
+
+  .geobars{display:grid;gap:14px}
+  .geobar{display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center}
+  .geobar .name{font-size:14px;color:var(--gris);text-align:right}
+  .geobar .track2{background:#E7EAE7;border-radius:4px;height:38px;position:relative;overflow:hidden}
+  .geobar .fill2{height:100%;background:#C4CDC6;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;font-weight:600;font-size:16px;color:var(--tinta);min-width:44px}
+  .geobar.zona .fill2{background:var(--verde);color:#fff}
+
+  .share-track{height:46px;background:var(--hueso);border:1px solid var(--linea);border-radius:8px;overflow:hidden;position:relative}
+  .share-fill{height:100%;background:var(--verde);display:flex;align-items:center;justify-content:flex-end;padding-right:14px;color:#fff;font-weight:600;font-size:16px}
+  .share-fill.prev{background:#C4CDC6;color:var(--tinta)}
+  .share-rest{position:absolute;top:0;right:14px;height:100%;display:flex;align-items:center;color:var(--gris);font-size:13px}
+  .share-lbl{font-size:13px;color:var(--gris);margin:18px 0 8px}
+
+  .actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:4px;overflow:hidden}
+  .act{background:var(--hueso);padding:28px 24px}
+  .act .num{font-size:12px;letter-spacing:.14em;font-weight:600;color:var(--verde)}
+  .act h3{font-size:19px;font-weight:600;letter-spacing:-.015em;line-height:1.25;margin:12px 0 10px}
+  .act p{font-size:14px;color:var(--gris)}
+
+  .next{margin-top:36px;padding:22px 26px;border:1px solid var(--verde);border-radius:4px;color:var(--verde-hondo);font-size:15px}
+  .next b{color:var(--verde);font-weight:600}
+
+  footer{border-top:1px solid var(--linea);padding:32px 0 64px;color:var(--gris);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:640px){
+    .statement{padding:32px 24px}
+    .fstep.s2{width:82%}
+    .fstep.s3{width:62%}
+    .compare .row{grid-template-columns:1.4fr 1fr 1fr}
+    .compare .cell{padding:14px 12px;font-size:15px}
+    .geobar{grid-template-columns:1fr;gap:6px}
+    .geobar .name{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20 4C20 14 14 20 4 20c0-10 6-16 16-16Z" fill="var(--verde)"/>
+        <path d="M4 20C8 14 12 10 18 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      RedVerde Bioconstrucción
+    </div>
+    <div class="stamp">Informe de campaña · Septiembre 2026</div>
+  </div>
+</div>
+
+<header class="wrap">
+  <div class="kicker">Publicidad en Google · Marca Mortex · Cierre de mes</div>
+  <h1>Septiembre cierra con <span class="verde">17 contactos reales</span>, ya centrados en tu zona.</h1>
+  <p class="lede">Es el primer mes con la campaña limitada a Andalucía y Levante. Como anticipamos en agosto, hay menos contactos que cuando se anunciaba en toda España, y cada visita cuesta más. A cambio, el ritmo es muy estable: desde el cambio de zona entran tres contactos por formulario cada semana.</p>
+</header>
+
+<section class="wrap">
+  <h2>Septiembre de un vistazo</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="n">1.877</div><div class="l">veces que se mostró tu anuncio</div></div>
+    <div class="kpi"><div class="n">216</div><div class="l">personas entraron en la web</div></div>
+    <div class="kpi hero"><div class="n">17</div><div class="l">contactos reales (formulario + WhatsApp)</div></div>
+    <div class="kpi"><div class="n">196,25 €</div><div class="l">invertidos en el mes</div></div>
+  </div>
+  <p class="intro" style="margin-top:36px;margin-bottom:0">Han llegado <b style="color:var(--tinta)">12 por el formulario</b> y <b style="color:var(--tinta)">5 por el WhatsApp</b> de la web. Son 17 contactos en total, a <b style="color:var(--verde)">11,54 €</b> de media.</p>
+</section>
+
+<section class="wrap">
+  <h2>Agosto frente a septiembre</h2>
+  <p class="intro">Con el mismo presupuesto, la campaña ha pasado de anunciarse en toda España a hacerlo solo en tu zona. Así lo reflejan las cifras:</p>
+  <div class="compare">
+    <div class="row head">
+      <div class="cell">&nbsp;</div>
+      <div class="cell right">Agosto</div>
+      <div class="cell right">Septiembre</div>
+    </div>
+    <div class="row"><div class="cell lbl">Zona de la campaña</div><div class="cell right prev">Toda España</div><div class="cell right real">Andalucía + Levante</div></div>
+    <div class="row"><div class="cell lbl">Visitas a la web</div><div class="cell right prev">300</div><div class="cell right real down">216</div></div>
+    <div class="row"><div class="cell lbl">Contactos por formulario</div><div class="cell right prev">23</div><div class="cell right real down">12</div></div>
+    <div class="row"><div class="cell lbl">Contactos por WhatsApp</div><div class="cell right prev">7</div><div class="cell right real down">5</div></div>
+    <div class="row"><div class="cell lbl">Coste por visita</div><div class="cell right prev">0,65 €</div><div class="cell right real down">0,91 €</div></div>
+    <div class="row"><div class="cell lbl">Coste por contacto</div><div class="cell right prev">6,46 €</div><div class="cell right real down">11,54 €</div></div>
+  </div>
+  <p class="note">Es el efecto esperable de concentrar el mismo presupuesto en una zona más pequeña: hay menos búsquedas disponibles y cada visita se disputa más. En la primera semana del mes, todavía con toda España, la visita costaba 0,61 €. Desde el cambio de zona, 1,04 €.</p>
+
+  <svg class="chart" viewBox="0 0 700 300" role="img" aria-label="Contactos por formulario acumulados a lo largo de septiembre" style="margin-top:44px">
+    <rect x="172.4" y="20" width="507.6" height="240" fill="var(--verde)" opacity="0.04"/>
+    <line x1="40" y1="20"  x2="680" y2="20"  stroke="var(--linea)" stroke-width="1"/>
+    <line x1="40" y1="140" x2="680" y2="140" stroke="var(--linea)" stroke-width="1"/>
+    <line x1="40" y1="260" x2="680" y2="260" stroke="var(--linea)" stroke-width="1.5"/>
+    <line x1="172.4" y1="20" x2="172.4" y2="260" stroke="var(--tierra)" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <text x="180" y="248" fill="var(--tierra)" font-family="Inter,sans-serif" font-size="12" font-weight="600">7 sep · solo Andalucía + Levante</text>
+    <g fill="var(--gris)" font-family="Inter,sans-serif" font-size="12" text-anchor="end">
+      <text x="34" y="24">12</text>
+      <text x="34" y="144">6</text>
+      <text x="34" y="264">0</text>
+    </g>
+    <polygon points="40,260 62.1,260 84.1,240 106.2,240 128.3,220 150.3,200 172.4,160 194.5,140 216.6,140 238.6,140 260.7,140 282.8,140 304.8,140 326.9,140 349.0,120 371.0,120 393.1,120 415.2,100 437.2,100 459.3,80 481.4,60 503.4,60 525.5,20 547.6,20 569.7,20 591.7,20 613.8,20 635.9,20 657.9,20 680,20 680,260"
+             fill="var(--verde)" opacity="0.10"/>
+    <polyline points="40,260 62.1,260 84.1,240 106.2,240 128.3,220 150.3,200 172.4,160 194.5,140 216.6,140 238.6,140 260.7,140 282.8,140 304.8,140 326.9,140 349.0,120 371.0,120 393.1,120 415.2,100 437.2,100 459.3,80 481.4,60 503.4,60 525.5,20 547.6,20 569.7,20 591.7,20 613.8,20 635.9,20 657.9,20 680,20"
+              fill="none" stroke="var(--verde)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="680" cy="20" r="6" fill="var(--verde)"/>
+    <text x="672" y="14" fill="var(--verde)" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="end">12 contactos</text>
+    <g fill="var(--gris)" font-family="Inter,sans-serif" font-size="12">
+      <text x="40" y="282" text-anchor="start">1 sep</text>
+      <text x="349" y="282" text-anchor="middle">15 sep</text>
+      <text x="680" y="282" text-anchor="end">30 sep</text>
+    </g>
+  </svg>
+  <p class="chart-cap">Contactos por formulario acumulados. Del 7 al 27 de septiembre entraron exactamente 3 cada semana. Los tres últimos días del mes (28 a 30) no hubo ninguno: lo vigilamos de cerca en octubre.</p>
+</section>
+
+<section class="wrap">
+  <h2>¿Se cumplió la previsión de agosto?</h2>
+  <p class="intro">En el informe de agosto previmos unos 10 contactos en septiembre, todos de tu zona. Este es el resultado:</p>
+  <div class="compare">
+    <div class="row head">
+      <div class="cell">&nbsp;</div>
+      <div class="cell right">Previsto</div>
+      <div class="cell right">Real</div>
+    </div>
+    <div class="row"><div class="cell lbl">Contactos en el mes</div><div class="cell right prev">~10</div><div class="cell right real">17</div></div>
+    <div class="row"><div class="cell lbl">Formularios con obra en tu zona</div><div class="cell right prev">Todos</div><div class="cell right real down">6 de 9</div></div>
+  </div>
+  <p class="note">En número de contactos, septiembre ha superado la previsión. Pero no todos son de tu zona. De los 9 formularios recibidos desde el cambio, <b>6 tienen la obra en Andalucía o Levante y 3 en Madrid</b>. Google muestra el anuncio a quien <b>está</b> en la zona, no a quien tiene la obra en ella: alguien en Málaga que reforma un piso en Madrid ve tu anuncio. Por eso el filtro geográfico reduce los contactos de fuera, pero no los elimina del todo. Los 3 formularios de los días 1 a 6, todavía con toda España, vinieron de Pontevedra, Barcelona y Girona.</p>
+</section>
+
+<section class="wrap">
+  <h2>Dónde se generan las visitas</h2>
+  <p class="intro">Visitas a la web en septiembre según dónde estaba la persona al buscar. La Comunidad Valenciana y Málaga concentran casi dos tercios de las visitas dentro de tu zona:</p>
+  <div class="geobars">
+    <div class="geobar zona"><div class="name">Comunidad Valenciana</div><div class="track2"><div class="fill2" style="width:100%">63</div></div></div>
+    <div class="geobar zona"><div class="name">Málaga</div><div class="track2"><div class="fill2" style="width:55.6%">35</div></div></div>
+    <div class="geobar zona"><div class="name">Sevilla</div><div class="track2"><div class="fill2" style="width:30.2%">19</div></div></div>
+    <div class="geobar zona"><div class="name">Granada</div><div class="track2"><div class="fill2" style="width:19%">12</div></div></div>
+    <div class="geobar zona"><div class="name">Resto de Andalucía y Murcia</div><div class="track2"><div class="fill2" style="width:46%">29</div></div></div>
+    <div class="geobar"><div class="name">Resto de España (1–6 sep)</div><div class="track2"><div class="fill2" style="width:92%">58</div></div></div>
+  </div>
+  <p class="note">Las 58 visitas de fuera de zona son de la primera semana, antes del cambio. Desde el 7 de septiembre, <b>prácticamente todas las visitas llegan desde Andalucía y Levante</b>: 149 de 150.</p>
+</section>
+
+<section class="wrap">
+  <h2>Más presencia frente a la competencia</h2>
+  <p class="intro">De todas las búsquedas en las que tu anuncio podía aparecer, este es el porcentaje en el que apareció realmente:</p>
+  <div class="share-lbl">Agosto · toda España</div>
+  <div class="share-track"><div class="share-fill prev" style="width:26.14%">26 %</div></div>
+  <div class="share-lbl">Septiembre · Andalucía + Levante</div>
+  <div class="share-track"><div class="share-fill" style="width:35.55%">36 %</div></div>
+  <p class="note">Al concentrar el presupuesto, tu anuncio aparece en más búsquedas de tu zona. Además, cuando aparece, lo hace en la parte superior de la página el 66 % de las veces. Los otros anunciantes que pujan por estas búsquedas son <b>BEAL</b> (el propio fabricante de Mortex) y <b>Epodex</b> (otro fabricante de microcemento), que ha empezado a anunciarse este mes.</p>
+</section>
+
+<section class="wrap">
+  <h2>Así se ven tus anuncios en Google</h2>
+  <p class="intro">Los anuncios no han cambiado este mes. Esto es lo que ve una persona en su móvil cuando busca «mortex», «microcemento» o «mortero de cal»:</p>
+  <div class="gallery">
+    <div class="adcard"><img src="imagenes/anuncio-1.png" alt="Anuncio Microcemento Mortex, Precio m2" loading="lazy"><div class="cap"><b>Microcemento Mortex · Precio m²</b><br>Con botón de llamada directa.<span class="tag">Llamada</span></div></div>
+    <div class="adcard"><img src="imagenes/anuncio-2.png" alt="Anuncio Comprar Mortex Online" loading="lazy"><div class="cap"><b>Comprar Mortex Online · Saco 25 kg</b><br>Enfocado a la venta del producto.<span class="tag">Llamada</span></div></div>
+    <div class="adcard"><img src="imagenes/anuncio-3.png" alt="Anuncio Calcula tu Precio de Mortex" loading="lazy"><div class="cap"><b>Calcula tu Precio de Mortex</b><br>Distribuidor oficial, envío a toda España.<span class="tag">Llamada</span></div></div>
+    <div class="adcard"><img src="imagenes/anuncio-4.png" alt="Anuncio Microcemento Mortex Suelos" loading="lazy"><div class="cap"><b>Microcemento Mortex · Suelos</b><br>«Renovar sin obras» como gancho.<span class="tag">Llamada</span></div></div>
+    <div class="adcard"><img src="imagenes/anuncio-5.png" alt="Anuncio Revestimiento Mortex" loading="lazy"><div class="cap"><b>Revestimiento Mortex</b><br>Otra combinación de titulares que prueba Google.<span class="tag">Variante</span></div></div>
+    <div class="adcard"><img src="imagenes/anuncio-6.png" alt="Anuncio Micromortero Mortex con WhatsApp" loading="lazy"><div class="cap"><b>Micromortero Mortex Oficial</b><br>Aquí aparece el botón de WhatsApp.<span class="tag">WhatsApp</span></div></div>
+    <div class="adcard"><img src="imagenes/anuncio-7.png" alt="Anuncio Mortex Precio por Saco con enlaces" loading="lazy"><div class="cap"><b>Mortex Precio por Saco</b><br>Con enlaces extra a otras páginas de la web.<span class="tag">Enlaces + Llamada</span></div></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>El recorrido: de una búsqueda a un contacto</h2>
+  <p class="intro">Así se estrecha el «embudo» de la campaña. Estos son los números reales de septiembre:</p>
+  <div class="funnel">
+    <div class="fstep s1"><div class="fn">1.877</div><div class="fl">veces que apareció el anuncio</div></div>
+    <div class="fconn">↓ &nbsp;<b>12 de cada 100</b> hacen clic y entran en la web</div>
+    <div class="fstep s2"><div class="fn">216</div><div class="fl">visitas a la web</div></div>
+    <div class="fconn">↓ &nbsp;<b>8 de cada 100</b> visitas contactan (formulario o WhatsApp)</div>
+    <div class="fstep s3"><div class="fn">17</div><div class="fl">contactos reales</div></div>
+  </div>
+  <p class="chart-cap">La proporción de personas que hacen clic se mantiene como en agosto. La de visitas que acaban contactando baja de 10 a 8 de cada 100.</p>
+</section>
+
+<section class="wrap">
+  <h2>Cómo contamos los contactos</h2>
+  <p class="intro">Como cada mes, cruzamos lo que registra Google con los envíos reales del formulario, uno a uno. Este mes Google se ha quedado corto:</p>
+  <div class="compare">
+    <div class="row head">
+      <div class="cell">&nbsp;</div>
+      <div class="cell right">Contaba Google</div>
+      <div class="cell right">Reales</div>
+    </div>
+    <div class="row"><div class="cell lbl">Contactos de formulario</div><div class="cell right prev">8</div><div class="cell right real">12</div></div>
+    <div class="row"><div class="cell lbl">Contactos por WhatsApp</div><div class="cell right prev">5</div><div class="cell right prev">5</div></div>
+  </div>
+  <p class="note">Google no registra a las personas que rechazan las cookies de la web, y por eso cuenta menos formularios de los que llegan. Los 12 reales son personas distintas: hemos descartado un envío duplicado y las pruebas técnicas. En total, <b>17 contactos reales</b> en septiembre.</p>
+</section>
+
+<section class="wrap">
+  <h2>Quiénes son esos contactos</h2>
+  <p class="intro">Este es el perfil de los 12 contactos del formulario. Todos tienen un proyecto concreto detrás:</p>
+  <div class="kpis">
+    <div class="kpi hero"><div class="n">5</div><div class="l">profesionales (arquitecta, interiorista, reformas)</div></div>
+    <div class="kpi"><div class="n">7</div><div class="l">particulares con obra en marcha</div></div>
+    <div class="kpi"><div class="n">2</div><div class="l">residentes extranjeros en la costa</div></div>
+  </div>
+  <p class="note">Destacan una <b>arquitecta</b> con una rehabilitación de 130 m² (suelos y dos baños), un <b>interiorista</b>, un <b>obrador de panadería de 800 m²</b> y varias reformas de 100 m² o más, entre ellas terraza con piscina y suelos de vivienda completa. Dos contactos son <b>residentes extranjeros</b>: uno en Cádiz que escribió en inglés y otro en Benissa (Alicante).</p>
+</section>
+
+<section class="wrap">
+  <h2>Previsión para octubre</h2>
+  <p class="intro">Octubre será el primer mes completo con la campaña en Andalucía y Levante desde el día 1. Si se mantiene el ritmo de septiembre:</p>
+  <div class="kpis">
+    <div class="kpi hero"><div class="n">12–14</div><div class="l">contactos por formulario previstos</div></div>
+    <div class="kpi"><div class="n">+ WhatsApp</div><div class="l">en septiembre fueron 5</div></div>
+    <div class="kpi"><div class="n">~200 €</div><div class="l">mismo presupuesto</div></div>
+  </div>
+  <p class="chart-cap">Es una previsión prudente, basada en los 3 contactos por semana que ha mantenido la campaña desde el cambio de zona. Puede bajar si el coste por visita sigue subiendo como en los últimos días de septiembre.</p>
+</section>
+
+<section class="wrap">
+  <h2>Qué hacemos ahora</h2>
+  <div class="actions">
+    <div class="act">
+      <div class="num">01</div>
+      <h3>Dejar de pagar búsquedas que no son de Mortex</h3>
+      <p>Tu anuncio también aparece cuando alguien busca otras marcas (Cumen, Weber, Topciment…) o morteros para fachada, y algunas de esas búsquedas acaban en visita. Las excluimos para que el presupuesto se centre en quien busca Mortex o una alternativa al microcemento.</p>
+    </div>
+    <div class="act">
+      <div class="num">02</div>
+      <h3>Decidir qué hacer con las obras de fuera</h3>
+      <p>Seguirán llegando algunos contactos con la obra fuera de tu zona, sobre todo de Madrid. Como envías producto a toda España, te proponemos atenderlos como venta de material aunque no puedas ofrecer la aplicación.</p>
+    </div>
+    <div class="act">
+      <div class="num">03</div>
+      <h3>Valorar anuncios en inglés</h3>
+      <p>Hay búsquedas de Mortex en inglés, francés y neerlandés, y dos contactos de residentes extranjeros. En la Costa del Sol y en Alicante es un público con presupuesto de reforma. Podríamos probar un anuncio en inglés sin aumentar la inversión.</p>
+    </div>
+  </div>
+  <div class="next"><b>Próxima revisión:</b> primeros de noviembre, con el primer mes completo en Andalucía y Levante.</div>
+</section>
+
+<footer class="wrap">
+  <span>Datos del 1 al 30 de septiembre de 2026 · Contactos verificados con el formulario</span>
+</footer>
+
+</body>
+</html>
